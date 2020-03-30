@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  db:
+    container_name: thisismytoday-db
+    image: postgres:11.2
+    networks:
+      - thisismytoday
+    ports:
+      - "9071:5432"
+    environment:
+      POSTGRES_DB: this_is_my_today
+      POSTGRES_USER: this_is_my_today
+      POSTGRES_PASSWORD: this_is_my_today
+networks:
+  thisismytoday:
+    name: thisismytoday
